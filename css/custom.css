@@ -40,3 +40,11 @@ body {
 [data-bs-theme="dark"] .theme-icon-sun {
   display: inline-block;
 }
+
+/* Uniform, smaller gallery thumbnails regardless of the source photo's
+   own aspect ratio; click still opens the full-size original. */
+.gallery-thumb {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
