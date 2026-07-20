@@ -46,7 +46,9 @@
 </nav>
 
 <!-- Gallery -->
-<div id="imageGallery" class="mt-4 mb-4"></div>
+<div class="container mt-4 mb-4">
+  <div id="imageGallery" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4"></div>
+</div>
 
 <!-- Video (click-to-load: nothing is requested from Vimeo until the visitor clicks) -->
 <div class="mx-auto mb-4" style="width: 95%;">
@@ -82,17 +84,28 @@
 <!-- Script for the Gallery -->
 <script>
   const imageContainer = document.getElementById('imageGallery');
+  const altPrefix = document.documentElement.lang === 'en' ? 'Gallery image ' : 'Galeriebild ';
 
   // Get Number of Images
   const totalImages = 3
 
   for (let i = 1; i <= totalImages; i++) {
+    const col = document.createElement('div');
+    col.className = 'col';
+
+    const link = document.createElement('a');
+    link.href = 'img/gallery/' + i + '.JPG';
+    link.target = '_blank';
+    link.rel = 'noopener';
+
     const img = document.createElement('img');
     img.src = 'img/gallery/' + i + '.JPG';
-    img.alt = 'Image ' + i;
-    img.className = 'img-fluid rounded mx-auto d-block mt-4 mb-4';
-    img.style.width = '95%';
-    imageContainer.appendChild(img);
+    img.alt = altPrefix + i;
+    img.className = 'gallery-thumb img-fluid rounded';
+
+    link.appendChild(img);
+    col.appendChild(link);
+    imageContainer.appendChild(col);
   }
 </script>
 
