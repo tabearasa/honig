@@ -1,9 +1,10 @@
 /* Main color: #F3BB53 */
 
+/*
 .navbar-text{
   color: #F3BB53 !important;
 }
-
+*/
 .nav-link{
   color: #F3BB53 !important;
 }
@@ -14,4 +15,28 @@
 
 .navbar-toggler{
   color: #F3BB53 !important;
+}
+
+/* Active nav link (current page) gets an underline instead of a color
+   change, since the color is already fixed to the honey accent above. */
+.nav-link.active {
+  font-weight: 600;
+  border-bottom: 2px solid #F3BB53;
+}
+
+/* Smooth transition when switching between light and dark mode. */
+body {
+  transition: background-color .15s ease-in-out, color .15s ease-in-out;
+}
+
+/* Theme toggle button: show only the icon matching the *other* mode,
+   i.e. the one clicking the button would switch to. */
+.theme-icon-sun {
+  display: none;
+}
+[data-bs-theme="dark"] .theme-icon-moon {
+  display: none;
+}
+[data-bs-theme="dark"] .theme-icon-sun {
+  display: inline-block;
 }
