@@ -28,13 +28,14 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link" href="products.html">Produkte</a>
+          <a class="nav-link" data-i18n="nav.products" href="products.html">Produkte</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="gallery.html">Galerie</a>
+          <a class="nav-link active" aria-current="page" data-i18n="nav.gallery" href="gallery.html">Galerie</a>
         </li>
       </ul>
-      <div class="d-flex mt-3 mt-lg-0">
+      <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
+        <button id="langToggle" class="btn btn-outline-secondary btn-sm" type="button" aria-label="Sprache wechseln">EN</button>
         <button id="themeToggle" class="btn btn-outline-secondary btn-sm" type="button" aria-label="Farbschema umschalten">
           <svg class="theme-icon theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"/><path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.73 1.73 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.73 1.73 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.73 1.73 0 0 0 1.097-1.097zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z"/></svg>
           <svg class="theme-icon theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/></svg>
@@ -54,7 +55,7 @@
       <div style="width:0;height:0;border-top:14px solid transparent;border-bottom:14px solid transparent;border-left:22px solid white;margin-left:6px;"></div>
     </div>
     <div style="position:absolute;bottom:0;left:0;right:0;color:white;background:rgba(0,0,0,0.6);padding:6px;font-size:0.85rem;text-align:center;">
-      Video laden (lädt Inhalte von Vimeo &ndash; siehe <a href="datenschutz.html" style="color:white;">Datenschutzerkl&auml;rung</a>)
+      <span data-i18n="gallery.videoConsentPre">Video laden (lädt Inhalte von Vimeo &ndash; siehe </span><a href="datenschutz.html" style="color:white;" data-i18n="gallery.videoConsentLink">Datenschutzerklärung</a><span data-i18n="gallery.videoConsentPost">)</span>
     </div>
   </div>
 </div>
@@ -67,15 +68,16 @@
             <span class="align-middle">tabearasa</span>
         </a>
         <span class="mx-2">|</span>
-        <a href="impressum.html" class="text-secondary" style="text-decoration: none">Impressum</a>
+        <a href="impressum.html" class="text-secondary" style="text-decoration: none" data-i18n="footer.impressum">Impressum</a>
         <span class="mx-2">|</span>
-        <a href="datenschutz.html" class="text-secondary" style="text-decoration: none">Datenschutz</a>
+        <a href="datenschutz.html" class="text-secondary" style="text-decoration: none" data-i18n="footer.datenschutz">Datenschutz</a>
     </div>
 </footer>
 
 <!-- Bootstrap JavaScript -->
 <script src="js/vendor/bootstrap.bundle.min.js"></script>
 <script src="js/theme.js"></script>
+<script src="js/i18n.js"></script>
 
 <!-- Script for the Gallery -->
 <script>
