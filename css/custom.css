@@ -47,14 +47,6 @@ body {
   object-fit: cover;
 }
 
-/* Quiz answer buttons: the selected choice is highlighted in the site's
-   brand gold (see main color note above), used here as "yellow". */
-.quiz-answer.selected {
-  background-color: #F3BB53;
-  border-color: #F3BB53;
-  color: #212529;
-}
-
 .quiz-progress {
   color: var(--bs-secondary-color);
   font-size: 0.9rem;

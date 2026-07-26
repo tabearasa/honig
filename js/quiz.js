@@ -166,7 +166,6 @@
       btn.className = 'btn btn-outline-secondary w-100 quiz-answer';
       btn.textContent = choice;
       btn.disabled = session.answered;
-      if (session.answered && i === session.selectedIndex) btn.classList.add('selected');
       btn.addEventListener('click', function () { selectAnswer(i, btn); });
 
       col.appendChild(btn);
@@ -182,10 +181,12 @@
     Array.prototype.forEach.call(answersEl.querySelectorAll('.quiz-answer'), function (b) {
       b.disabled = true;
     });
-    btn.classList.add('selected');
 
     const round = session.rounds[session.index];
-    if (index === round.correct) session.score++;
+    const isCorrect = index === round.correct;
+    btn.classList.remove('btn-outline-secondary');
+    btn.classList.add(isCorrect ? 'btn-success' : 'btn-danger');
+    if (isCorrect) session.score++;
 
     setTimeout(advance, ADVANCE_DELAY);
   }
