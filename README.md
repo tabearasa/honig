@@ -1,4 +1,4 @@
-# honig
+# honig 🍯
 
 Super-small website for QR-Codes on honey glasses.
 
@@ -23,3 +23,8 @@ static and can be run by a simple python server.
 ```bash
 python -m http.server -b 127.0.0.1 8000
 ```
+
+## Contributing
+
+I welcome every submitted issue, feature idea and bug report
+to this project to help improve "honig".
