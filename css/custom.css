@@ -72,7 +72,7 @@ body {
 
 .celebration-item {
   position: absolute;
-  left: -10%;
+  left: 110%;
   font-size: 2rem;
 }
 
@@ -85,6 +85,6 @@ body {
 }
 
 @keyframes fly-across {
-  from { left: -10%; }
-  to { left: 110%; }
+  from { left: 110%; }
+  to { left: -10%; }
 }
