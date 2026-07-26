@@ -31,10 +31,10 @@
           <a class="nav-link" data-i18n="nav.products" href="products.html">Produkte</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" data-i18n="nav.gallery" href="gallery.html">Galerie</a>
+          <a class="nav-link" data-i18n="nav.gallery" href="gallery.html">Galerie</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-i18n="nav.quiz" href="quiz.html">Quiz</a>
+          <a class="nav-link active" aria-current="page" data-i18n="nav.quiz" href="quiz.html">Quiz</a>
         </li>
       </ul>
       <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
@@ -48,23 +48,35 @@
   </div>
 </nav>
 
-<!-- Gallery (photos are added here by script below; the video tile is
-     pinned last via order-last so it always follows the photos) -->
-<div class="container mt-4 mb-4">
-  <div id="imageGallery" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-    <!-- Video (click-to-load: nothing is requested from Vimeo until the visitor clicks) -->
-    <div class="col order-last">
-      <div id="videoPlaceholder" onclick="loadVimeoVideo()" class="gallery-thumb rounded" style="position:relative;background-image:url('img/gallery/2.JPG');background-size:cover;background-position:center;cursor:pointer;overflow:hidden;">
-        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;background:rgba(0,0,0,0.6);border-radius:50%;display:flex;align-items:center;justify-content:center;">
-          <div style="width:0;height:0;border-top:10px solid transparent;border-bottom:10px solid transparent;border-left:16px solid white;margin-left:4px;"></div>
-        </div>
-        <div style="position:absolute;bottom:0;left:0;right:0;color:white;background:rgba(0,0,0,0.6);padding:4px 6px;font-size:0.7rem;text-align:center;">
-          <span data-i18n="gallery.videoConsentPre">Video laden (lädt Inhalte von Vimeo &ndash; siehe </span><a href="datenschutz.html" style="color:white;" data-i18n="gallery.videoConsentLink">Datenschutzerklärung</a><span data-i18n="gallery.videoConsentPost">)</span>
-        </div>
+<!-- Quiz -->
+<div class="container my-4">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 text-center">
+
+      <div id="quizStart">
+        <h2 data-i18n="quiz.heading">Bienen-Buzz-Facts-Quiz</h2>
+        <p data-i18n="quiz.intro">Wie gut kennst du dich mit Bienen aus? Beantworte 6 kurze Fragen und finde es heraus!</p>
+        <button id="quizStartBtn" class="btn btn-warning" type="button" data-i18n="quiz.start">Quiz starten</button>
       </div>
+
+      <div id="quizQuestion" class="d-none">
+        <p id="quizProgress" class="quiz-progress"></p>
+        <h4 id="quizQuestionText" class="mb-4"></h4>
+        <div id="quizAnswers" class="row row-cols-1 row-cols-sm-2 g-3"></div>
+      </div>
+
+      <div id="quizResult" class="d-none">
+        <h2 data-i18n="quiz.resultHeading">Geschafft!</h2>
+        <p id="quizScoreText" class="lead"></p>
+        <button id="quizRestartBtn" class="btn btn-warning" type="button" data-i18n="quiz.playAgain">Nochmal spielen</button>
+      </div>
+
     </div>
   </div>
 </div>
+
+<!-- Bee/flower celebration overlay, populated by quiz.js when a quiz finishes -->
+<div id="celebration" aria-hidden="true"></div>
 
 <!-- Footer -->
 <footer class="fixed-bottom bg-body-tertiary py-2 text-center">
@@ -84,45 +96,7 @@
 <script src="js/vendor/bootstrap.bundle.min.js"></script>
 <script src="js/theme.js"></script>
 <script src="js/i18n.js"></script>
-
-<!-- Script for the Gallery -->
-<script>
-  const imageContainer = document.getElementById('imageGallery');
-  const altPrefix = document.documentElement.lang === 'en' ? 'Gallery image ' : 'Galeriebild ';
-
-  // Get Number of Images
-  const totalImages = 3
-
-  for (let i = 1; i <= totalImages; i++) {
-    const col = document.createElement('div');
-    col.className = 'col';
-
-    const link = document.createElement('a');
-    link.href = 'img/gallery/' + i + '.JPG';
-    link.target = '_blank';
-    link.rel = 'noopener';
-
-    const img = document.createElement('img');
-    img.src = 'img/gallery/' + i + '.JPG';
-    img.alt = altPrefix + i;
-    img.className = 'gallery-thumb img-fluid rounded';
-
-    link.appendChild(img);
-    col.appendChild(link);
-    imageContainer.appendChild(col);
-  }
-</script>
-
-<!-- Script to load the Vimeo embed only after user consent (click) -->
-<script>
-  function loadVimeoVideo() {
-    const placeholder = document.getElementById('videoPlaceholder');
-    placeholder.outerHTML = '<div class="ratio ratio-16x9 rounded overflow-hidden"><iframe src="https://player.vimeo.com/video/872668567?badge=0&autopause=0&quality_selector=1&progress_bar=1&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" title="Honig"></iframe></div>';
-    const vimeoScript = document.createElement('script');
-    vimeoScript.src = 'https://player.vimeo.com/api/player.js';
-    document.body.appendChild(vimeoScript);
-  }
-</script>
+<script src="js/quiz.js"></script>
 
 </body>
 </html>
