@@ -46,3 +46,45 @@ body {
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
+
+/* Quiz answer buttons: the selected choice is highlighted in the site's
+   brand gold (see main color note above), used here as "yellow". */
+.quiz-answer.selected {
+  background-color: #F3BB53;
+  border-color: #F3BB53;
+  color: #212529;
+}
+
+.quiz-progress {
+  color: var(--bs-secondary-color);
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Bee/flower celebration overlay shown once when a quiz is finished. */
+#celebration {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 2000;
+}
+
+.celebration-item {
+  position: absolute;
+  left: -10%;
+  font-size: 2rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .celebration-item {
+    animation-name: fly-across;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes fly-across {
+  from { left: -10%; }
+  to { left: 110%; }
+}
