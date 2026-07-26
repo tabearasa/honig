@@ -6,6 +6,7 @@
     de: {
       'nav.products': 'Produkte',
       'nav.gallery': 'Galerie',
+      'nav.quiz': 'Quiz',
       'footer.impressum': 'Impressum',
       'footer.datenschutz': 'Datenschutz',
       'index.lead': 'Eine Co-Produktion von Sophia, mir und ganz vielen Bienen.',
@@ -17,11 +18,17 @@
       'products.price': 'Preis auf Anfrage',
       'gallery.videoConsentPre': 'Video laden (lädt Inhalte von Vimeo – siehe ',
       'gallery.videoConsentLink': 'Datenschutzerklärung',
-      'gallery.videoConsentPost': ')'
+      'gallery.videoConsentPost': ')',
+      'quiz.heading': 'Bienen-Buzz-Facts-Quiz',
+      'quiz.intro': 'Wie gut kennst du dich mit Bienen aus? Beantworte 6 kurze Fragen und finde es heraus!',
+      'quiz.start': 'Quiz starten',
+      'quiz.resultHeading': 'Geschafft!',
+      'quiz.playAgain': 'Nochmal spielen'
     },
     en: {
       'nav.products': 'Products',
       'nav.gallery': 'Gallery',
+      'nav.quiz': 'Quiz',
       'footer.impressum': 'Imprint',
       'footer.datenschutz': 'Privacy Policy',
       'index.lead': 'A co-production of Sophia, me and countless bees.',
@@ -33,7 +40,12 @@
       'products.price': 'Price on request',
       'gallery.videoConsentPre': 'Load video (loads content from Vimeo – see ',
       'gallery.videoConsentLink': 'privacy policy',
-      'gallery.videoConsentPost': ')'
+      'gallery.videoConsentPost': ')',
+      'quiz.heading': 'Bee Buzz Facts Quiz',
+      'quiz.intro': 'How much do you know about bees? Answer 6 quick questions and find out!',
+      'quiz.start': 'Start quiz',
+      'quiz.resultHeading': 'All done!',
+      'quiz.playAgain': 'Play again'
     }
   };
 
